@@ -19,6 +19,7 @@ Your task is to extend this project wth some new endpoints and features, as foll
   * Querying GET `/api/movies/1` would return the Movie with `id: 1`
   * Allow PUT, PATCH, DELETE on `/api/movies/<id>` as well
 * Add a new field to the API: `runtime_formatted` that returns the runtime as a string in the format `H:MM`
+  * A `runtime` of 142 minutes should have a `runtime_formatted` of `2:22`
 * Add a second Model for Reviews that is many:one related to Movies
   * Include, at minimum, fields for the reviewer's name and rating out of 5 stars
 * Add Reviews to both the List and Detail Movie Views
