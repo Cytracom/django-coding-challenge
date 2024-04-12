@@ -13,11 +13,23 @@ The project includes a List API for Movies at `localhost:8080/api/movies`
 Your task is to extend this project wth some new endpoints and features, as follows:
 
 * Add a Detail View for Movies
-* Modify the API to return `movie_name` instead of `title`
+  * Querying GET `/api/movies/1` would return the Movie with `id: 1`
+  * Allow PUT, PATCH, DELETE on `/api/movies/<id>` as well
 * Add a new field to the API: `runtime_formatted` that returns the runtime as a string in the format `H:MM`
 * Add a second Model for Reviews that is many:one related to Movies
   * Include, at minimum, fields for the reviewer's name and rating out of 5 stars
 * Add Reviews to both the List and Detail Movie Views
   * Include the whole model, not just an ID reference
+  * Example output:
+    ```
+    {
+      "title": "Forrest Gump",
+      "runtime": 142,
+      "release_date": "1994-07-06",
+      "reviewers": [{"name": "Roger Ebert", "rating": 4}, {"name": "Gene Siskel", "rating": 3}]
+    }
+    ```
+* Add a new field to the API: `avg_rating` that returns the average rating of a movie by all the reviewers
+  * A Movie with 4 reviewers, who each gave the Movie 2, 2, 3, and 4 stars would result in an `avg_rating` of `2.75`
 * Add Query Parameters to the List View that allows filtering on the `runtime`
   * It should be possible to filter for either longer or shorter than the input
