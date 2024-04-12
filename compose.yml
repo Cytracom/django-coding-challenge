@@ -1,0 +1,32 @@
+volumes:
+  django_coding_challenge_postgres_data: {}
+
+services:
+  django:
+    build:
+      context: .
+      dockerfile: ./compose/Dockerfile
+    image: cytracom_django_coding_challenge
+    container_name: cytra_django
+    depends_on:
+      - postgres
+      - redis
+    volumes:
+      - .:/app:z
+    env_file:
+      - ./.env
+    ports:
+      - "8080:8000"
+    command: /start
+
+  postgres:
+    image: postgres:16
+    container_name: postgres
+    volumes:
+      - django_coding_challenge_postgres_data:/var/lib/postgresql/data:Z
+    env_file:
+      - ./.env
+
+  redis:
+    image: redis:7
+    container_name: redis
