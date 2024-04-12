@@ -8,7 +8,10 @@ This project will serve an API on `localhost:8080`
 
 The project includes a List API for Movies at `localhost:8080/api/movies`
 
+
 ## Your Task
+
+All of the relevant code for these tasks lives in `coding_challenge/movies/`
 
 Your task is to extend this project wth some new endpoints and features, as follows:
 
